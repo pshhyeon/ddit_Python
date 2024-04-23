@@ -86,6 +86,7 @@ public class MySw10 extends JFrame {
 		int last_num = Integer.parseInt(tf_last.getText());
 		String str = "";
 		
+		// 풀력을 method로 분리해주면 좋음
 		for (int i = first_num; i <= last_num; i++) {
 			for (int j = 0; j < i; j++) {
 				str += "★";
