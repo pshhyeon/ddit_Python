@@ -10,9 +10,14 @@ con = pymysql.connect(host='localhost'
 cur = con.cursor(pymysql.cursors.DictCursor)
 
 e_id = "6"
+e_name = "7"
+gen = "7"
+addr = "7"
 
 sql = f"""
-    DELETE FROM emp 
+    UPDATE emp 
+    SET 
+        e_id = '{e_id}', e_name = '{e_name}', gen = '{gen}', addr = '{addr}'
     WHERE e_id = '{e_id}'
 """
 
@@ -22,5 +27,3 @@ print("cnt", cur.rowcount)
 
 cur.close()
 con.close()
-
-
