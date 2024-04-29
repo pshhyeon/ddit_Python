@@ -78,9 +78,9 @@ def emp_add_act(request):
     cnt = de.insert(e_id, e_name, gen, addr)
     return render(request, 'emp_add_act.html', {'cnt': cnt})
 
-@csrf_exempt
+
 def emp_del_act(request):
-    e_id = request.GET['e_id']
+    e_id = request.POST['e_id']
     de = DaoEmp()
     cnt = de.delete(e_id);
     return render(request, 'emp_del_act.html', {'cnt': cnt})

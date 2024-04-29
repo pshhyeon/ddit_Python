@@ -9,12 +9,19 @@ function fn_mod(){
 }
 
 function fn_del_act(){
-	location.href='emp_del_act?e_id={{vo.e_id}}';
+	if(confirm('정말 삭제하시겠습니까?')) {
+		document.frm.submit();
+	}
 }
 </script>
 </head>
 <body>
 EMP_DETAIL HTML
+<form action="emp_del_act" name="frm" method="post" >
+	{% csrf_token %}
+	<input type="hidden" name="e_id" value="{{vo.e_id}}" />
+</form>
+
 <table border="1">
 	<tr>
 		<td>사번</td>

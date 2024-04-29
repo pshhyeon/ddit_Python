@@ -1,0 +1,9 @@
+1. views
+views안에 메서드에 >> @csrf_exempt import시키기
+
+2. .html파일
+폼 태그 안에 >> {% csrf_token %} 넣기
+
+3. settings
+MIDDLEWARE안에
+'django.middleware.csrf.CsrfViewMiddleware', >> 주석처리하기
