@@ -11,6 +11,7 @@ class DaoMem:
     
         self.cur = self.con.cursor(pymysql.cursors.DictCursor)
     
+    # 연결 테스트
     def selectList(self) :
         sql = """
             select 
@@ -24,7 +25,8 @@ class DaoMem:
         
     # 소멸자
     def __del__(self):
-        pass
+        cur.close();
+        con.close();
 
 if __name__ == '__main__':
     dm = DaoMem();
