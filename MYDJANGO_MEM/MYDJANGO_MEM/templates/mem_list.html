@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<!-- jquery 3.7.1 -->
+<script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+<!-- bootstrap 5.3.3 -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<script type="text/javascript">
+function fn_add(){
+	location.href='mem_add';
+}
+</script>
+
+</head>
+<body>
+<div class="container mt-3">
+  	MEM_LIST HMTL	
+	<table class="table table-bordered">
+		<tr>
+			<th>회원번호</th>
+			<th>회원명</th>
+			<th>전화번호</th>
+			<th>이메일</th>
+		</tr>
+	{% for m in list %}
+		<tr>
+			<td><a href="mem_detail?m_id={{m.m_id}}">{{m.m_id}}</a></td>
+			<td>{{m.m_name}}</td>
+			<td>{{m.tel}}</td>
+			<td>{{m.email}}</td>
+		</tr>
+	{% endfor %}
+		<tr>
+			<td colspan="4">
+				<input class="btn btn-primary btn-sm" type="button" value="추가" onclick="fn_add()">
+			</td>
+		</tr>
+	</table>
+</div>
+</body>
+</html>

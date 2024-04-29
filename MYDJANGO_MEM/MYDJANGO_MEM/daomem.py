@@ -21,14 +21,62 @@ class DaoMem:
         
         self.cur.execute(sql)
         list = self.cur.fetchall()
-        return(list)
+        return list
+        
+    def selectOne(self, m_id) :
+        sql = f"""
+            select 
+                m_id, m_name, tel, email 
+            from 
+                mem
+            where 
+                m_id = {m_id} 
+        """
+        self.cur.execute(sql)
+        vo = self.cur.fetchone()
+        return vo
+        
+    def insert(self, m_id, m_name, tel, email) :
+        sql = f"""
+            insert into mem
+                (m_id, m_name, tel, email) 
+            values 
+                ('{m_id}', '{m_name}', '{tel}', '{email}')
+        """
+        cnt = self.cur.execute(sql)
+        self.con.commit()
+        return cnt
+        
+    def update(self, m_id, m_name, tel, email) :
+        sql = f"""
+            update mem
+            set 
+                m_name = '{m_name}', tel = '{tel}', email = '{email}'
+            where 
+                m_id = '{m_id}'
+        """
+        cnt = self.cur.execute(sql)
+        self.con.commit()
+        return cnt
+        
+    def delete(self, m_id) :
+        sql = f"""
+            delete from mem
+            where m_id = '{m_id}'
+        """
+        cnt = self.cur.execute(sql)
+        self.con.commit()
+        return cnt
         
     # 소멸자
     def __del__(self):
-        cur.close();
-        con.close();
+        self.cur.close()
+        self.con.close()
 
 if __name__ == '__main__':
-    dm = DaoMem();
-    list = dm.selectList();
-    print('list',list)
+    pass
+    
+    
+    
+    
+    

@@ -1,0 +1,5 @@
+1. dao 생성
+2. views 생성
+3. templates > html생성
+4. urls > path 추가
+5. settings > INSTALLED_APPS > 프로젝트명 추가
