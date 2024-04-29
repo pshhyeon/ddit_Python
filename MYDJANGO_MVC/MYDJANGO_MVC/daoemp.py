@@ -21,7 +21,7 @@ class DaoEmp:
         
         self.cur.execute(sql)
         list = self.cur.fetchall()
-        return(list)
+        return list 
 
     # e_id와 일치하는 값 select 
     def selectOne(self, e_id) :
@@ -37,7 +37,7 @@ class DaoEmp:
         # vo = self.cur.fetchall()
         # 하나만 선택할때 fetchone()사용하는 것이 좋음 ==> 배열로 반환 안함
         vo = self.cur.fetchone()
-        return(vo)
+        return vo
     
     def insert(self,e_id, e_name, gen, addr):
         sql = f"""
