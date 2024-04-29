@@ -9,9 +9,13 @@ function fn_mod(){
 }
 
 function fn_del_act(){
-	if(confirm('정말 삭제하시겠습니까?')) {
-		document.frm.submit();
+	var flag = confirm('정말 삭제하시겠습니까?');
+	
+	// 병렬적 코드 사용을 위해 !flag > return 방식이 더 좋다.!!!!!!!!!!!!!!!!!!!!!!
+	if(!flag) {
+		return;
 	}
+	document.frm.submit();
 }
 </script>
 </head>
