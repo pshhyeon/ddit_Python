@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="jquery-3.7.1.js"></script>
+<script>
+function myclick() {
+	var it1 = $('.it').eq(0).val();
+	var it2 = $('.it').eq(1).val();
+	var num1 = parseInt(it1);
+	var num2 = parseInt(it2);
+	var sum = num1 + num2;
+	$('.it').eq(2).val(sum);
+}
+
+$(document).ready(function(){
+	$("#btn").on("click", function(event) {  
+		myclick();
+	});
+});
+
+</script>
+</head>
+<body>
+JQ02 HTML <br>
+<input type="text" class="it">
++
+<input type="text" class="it">
+<input type="button" value="=" id="btn">
+<input type="text" class="it">
+</body>
+</html>

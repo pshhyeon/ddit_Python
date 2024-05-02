@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="jquery-3.7.1.js"></script>
+<style type="text/css">
+#it{
+	text-align: right;
+}
+.num{
+	width: 50px;
+}
+
+#btn_call{
+	width: 100px;
+}
+
+table{
+	text-align: center;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function () {
+	// event Listener 사용
+	$('.num').each(function(index, num_btn) {
+		$(num_btn).on("click", function() {  
+			var old_str = $('#it').val();
+			var new_str = old_str + $(num_btn).val();
+			$('#it').val(new_str);
+		});
+	});
+	
+	$('#btn_call').on("click", function() {  
+		alert('calling...\n' + $('#it').val());
+		$('#it').val('');
+	});
+	
+});
+</script>
+</head>
+<body>
+JQ07 HTML <br>
+<table border="1px">
+	<tr>
+		<td colspan="3"> <input type="text" id="it"> </td>
+	</tr>
+	<tr>
+		<td> <input type="button" class="num" value="1"> </td>
+		<td> <input type="button" class="num" value="2"> </td>
+		<td> <input type="button" class="num" value="3"> </td>
+	</tr>
+	<tr>
+		<td> <input type="button" class="num" value="4"> </td>
+		<td> <input type="button" class="num" value="5"> </td>
+		<td> <input type="button" class="num" value="6"> </td>
+	</tr>
+	<tr>
+		<td> <input type="button" class="num" value="7"> </td>
+		<td> <input type="button" class="num" value="8"> </td>
+		<td> <input type="button" class="num" value="9"> </td>
+	</tr>
+	<tr>
+		<td> <input type="button" class="num" value="0"> </td>
+		<td colspan="2"> <input type="button" id="btn_call" value="☏"> </td>
+	</tr>
+</table>
+</body>
+</html>

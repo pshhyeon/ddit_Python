@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="jquery-3.7.1.js"></script>
+<style type="text/css">
+#it{
+	text-align: right;
+}
+
+.num{
+	width: 50px;
+}
+
+#btn_call{
+	width: 100px;
+}
+
+table{
+	text-align: center;
+}
+</style>
+<script type="text/javascript">
+// onclick사용
+function myclick(obj){
+	var obj_it = $('#it');
+	var str_new = $(obj).attr('value');
+	var str_old = obj_it.val();
+
+	obj_it.val(str_old + str_new);
+}
+
+function mycall(){
+	var obj_it = $('#it');
+	var str_tel = obj_it.val();
+
+	alert("calling...\n" + str_tel);
+	obj_it.val('');
+}
+
+
+</script>
+</head>
+<body>
+JQ07 HTML onclick<br>
+<table border="1px">
+	<tr>
+		<td colspan="3"> <input type="text" id="it"> </td>
+	</tr>
+	<tr>
+		<td> <input type="button" class="num" value="1" onclick="myclick(this)"> </td>
+		<td> <input type="button" class="num" value="2" onclick="myclick(this)"> </td>
+		<td> <input type="button" class="num" value="3" onclick="myclick(this)"> </td>
+	</tr>
+	<tr>
+		<td> <input type="button" class="num" value="4" onclick="myclick(this)"> </td>
+		<td> <input type="button" class="num" value="5" onclick="myclick(this)"> </td>
+		<td> <input type="button" class="num" value="6" onclick="myclick(this)"> </td>
+	</tr>
+	<tr>
+		<td> <input type="button" class="num" value="7" onclick="myclick(this)"> </td>
+		<td> <input type="button" class="num" value="8" onclick="myclick(this)"> </td>
+		<td> <input type="button" class="num" value="9" onclick="myclick(this)"> </td>
+	</tr>
+	<tr>
+		<td> <input type="button" class="num" value="0" onclick="myclick(this)"> </td>
+		<td colspan="2"> <input type="button" id="btn_call" value="☏" onclick="mycall()"> </td>
+	</tr>
+</table>
+</body>
+</html>

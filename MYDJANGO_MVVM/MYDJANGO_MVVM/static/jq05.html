@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="jquery-3.7.1.js"></script>
+<style type="text/css">
+#it_mine, #it_com, #it_result{
+	width: 40px;
+}
+</style>
+<script type="text/javascript">
+function myclick() {
+	var it_mine = $('#it_mine').val();
+	var it_com = '';
+	var it_result = '';
+	var rnd = Math.random();
+	
+	it_com = rnd > 0.5 ? '홀' : '짝';
+	it_result = it_mine == it_com ? '정답' : "땡";
+	
+	$('#it_com').val(it_com);
+	$('#it_result').val(it_result);
+}
+</script>
+</head>
+<body>
+JQ05 HTML <br>
+<table border="1px">
+	<tr>
+		<td>나</td>
+		<td>
+			<input type="text" id="it_mine">
+		</td>
+	</tr>
+	<tr>
+		<td>컴</td>
+		<td>
+			<input type="text" id="it_com">
+		</td>
+	</tr>
+	<tr>
+		<td>결과</td>
+		<td>
+			<input type="text" id="it_result">
+		</td>
+	</tr>
+	<tr>
+		<td colspan="2"><input type="button" value="게임하기" onclick="myclick()"></td>
+	</tr>
+</table>
+
+</body>
+</html>

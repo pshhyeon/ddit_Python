@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="jquery-3.7.1.js"></script>
+<style type="text/css">
+#it{
+	text-align: right;
+}
+.num{
+	width: 50px;
+}
+
+#btn_call{
+	width: 100px;
+}
+
+table{
+	text-align: center;
+}
+</style>
+<script type="text/javascript">
+function myclick(obj){
+	var str_new = $(obj).val();
+	var str_old = $('#it').val();
+	$('#it').val(str_old + str_new);
+}
+
+function mycall(){
+	var str_tel = $('#it').val();
+	alert("calling...\n" + str_tel);
+	$('#it').val('');
+}
+
+$(document).ready(function () {
+	$('.num').on("click", function(event) {  
+// 		console.log(event.target);
+// 		myclick(event.target);
+		// @@ event.target == this @@
+// 		console.log(this);
+		myclick(this);
+	});
+	
+	$('#btn_call').on("click", function() {  
+		mycall();
+	});
+});
+</script>
+</head>
+<body>
+JQ07 HTML 풀이<br>
+<table border="1px">
+	<tr>
+		<td colspan="3"> <input type="text" id="it"> </td>
+	</tr>
+	<tr>
+		<td> <input type="button" class="num" value="1"> </td>
+		<td> <input type="button" class="num" value="2"> </td>
+		<td> <input type="button" class="num" value="3"> </td>
+	</tr>
+	<tr>
+		<td> <input type="button" class="num" value="4"> </td>
+		<td> <input type="button" class="num" value="5"> </td>
+		<td> <input type="button" class="num" value="6"> </td>
+	</tr>
+	<tr>
+		<td> <input type="button" class="num" value="7"> </td>
+		<td> <input type="button" class="num" value="8"> </td>
+		<td> <input type="button" class="num" value="9"> </td>
+	</tr>
+	<tr>
+		<td> <input type="button" class="num" value="0"> </td>
+		<td colspan="2"> <input type="button" id="btn_call" value="☏"> </td>
+	</tr>
+</table>
+</body>
+</html>

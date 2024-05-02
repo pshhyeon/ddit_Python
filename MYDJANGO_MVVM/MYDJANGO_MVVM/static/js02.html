@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+.it{
+	width: 30px;
+}
+</style>
+<script type="text/javascript">
+function myclick() {
+	var its = document.getElementsByClassName('it');
+	its[2].value = parseInt(its[0].value) + parseInt(its[1].value);
+}
+</script>
+</head>
+<body>
+JS02 HTML <br>
+<input type="text" class="it">
++
+<input type="text" class="it">
+<input type="button" value="=" onclick="myclick()">
+<input type="text" class="it">
+
+</body>
+</html>

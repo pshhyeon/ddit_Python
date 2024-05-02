@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+#it_mine, #it_com, #it_result{
+	width: 40px;
+}
+</style>
+<script type="text/javascript">
+function myclick() {
+	var it_mine = document.getElementById('it_mine').value;
+	var it_com = '';
+	var it_result = '';
+	var rnd = Math.random();
+	
+	it_com = rnd > 0.5 ? '홀' : '짝';
+	it_result = it_mine == it_com ? '정답' : "땡";
+	
+// 	console.log('rnd : ', rnd, '\t| it_com : ', it_com, '\t| it_result : ', it_result);
+	
+	document.getElementById('it_com').value = it_com;
+	document.getElementById('it_result').value = it_result;
+	
+	/*
+	form 태그 안에 들어가면 value
+	나머지 innerText, innerHTML
+	단, textarea는 value, innerText 둘다 가능
+	*/
+}
+</script>
+</head>
+<body>
+JS05 HTML <br>
+<table border="1px">
+	<tr>
+		<td>나</td>
+		<td>
+			<input type="text" id="it_mine">
+		</td>
+	</tr>
+	<tr>
+		<td>컴</td>
+		<td>
+			<input type="text" id="it_com">
+		</td>
+	</tr>
+	<tr>
+		<td>결과</td>
+		<td>
+			<input type="text" id="it_result">
+		</td>
+	</tr>
+	<tr>
+		<td colspan="2"><input type="button" value="게임하기" onclick="myclick()"></td>
+	</tr>
+</table>
+
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="jquery-3.7.1.js"></script>
+<script>
+// javascript | jQuery
+// .innerHTML == .html()
+// .innerText == .text()
+// .value == .val()
+
+function myclick() {
+	$('#mydiv').html('Good Evening');
+}
+
+$(document).ready(function(){
+	$("#btn").on("click", function(event) {  
+		myclick();
+	});
+});
+
+</script>
+</head>
+<body>
+JQ01 HTML <br>
+<div id="mydiv">Good Morning</div>
+<input type="button" value="CLICK" id="btn">
+
+</body>
+</html>

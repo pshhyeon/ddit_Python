@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+.num{
+	width: 50px;
+}
+
+#btn_call{
+	width: 100px;
+}
+
+table{
+	text-align: center;
+}
+</style>
+<script type="text/javascript">
+window.onload = function () {
+	// const num_btns = document.getElementsByClassName("num");
+	// Array.from(num_btns) 메소드 사용으로 배열화 해야함
+	const num_btns = document.querySelectorAll(".num");
+	console.log(num_btns);
+	num_btns.forEach(function(num_btn) {
+		num_btn.addEventListener('click', function(){
+			console.log("this.value : " + this.value);
+			document.getElementById('it').value += this.value;
+		});
+	});
+	
+	var btn_call = document.getElementById('btn_call');
+	btn_call.addEventListener('click', function(){
+		alert(document.getElementById('it').value);
+		document.getElementById('it').value="";
+	});
+}
+</script>
+</head>
+<body>
+JS07 HTML <br>
+<table border="1px">
+	<tr>
+		<td colspan="3"> <input type="text" id="it"> </td>
+	</tr>
+	<tr>
+		<td> <input type="button" class="num" value="1"> </td>
+		<td> <input type="button" class="num" value="2"> </td>
+		<td> <input type="button" class="num" value="3"> </td>
+	</tr>
+	<tr>
+		<td> <input type="button" class="num" value="4"> </td>
+		<td> <input type="button" class="num" value="5"> </td>
+		<td> <input type="button" class="num" value="6"> </td>
+	</tr>
+	<tr>
+		<td> <input type="button" class="num" value="7"> </td>
+		<td> <input type="button" class="num" value="8"> </td>
+		<td> <input type="button" class="num" value="9"> </td>
+	</tr>
+	<tr>
+		<td> <input type="button" class="num" value="0"> </td>
+		<td colspan="2"> <input type="button" id="btn_call" value="☏"> </td>
+	</tr>
+</table>
+</body>
+</html>
