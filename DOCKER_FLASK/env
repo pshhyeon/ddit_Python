@@ -1,0 +1,5 @@
+# docker image 생성
+docker build -t flasktest .
+
+# docker container에 올리기
+docker run -d -p 0.0.0.0:5000:5000/tcp --name dockertest flasktest:latest
