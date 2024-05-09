@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+function fn_mod(){
+	location.href='emp_mod?e_id={{vo.e_id}}';
+}
+
+function fn_del_act(){
+	var flag = confirm('정말 삭제하시겠습니까?');
+	
+	// 병렬적 코드 사용을 위해 !flag > return 방식이 더 좋다.!!!!!!!!!!!!!!!!!!!!!!
+	if(!flag) {
+		return;
+	}
+	document.frm.submit();
+}
+</script>
+</head>
+<body>
+EMP_DETAIL HTML
+<form action="emp_del_act" name="frm" method="post" >
+	{% csrf_token %}
+	<input type="hidden" name="e_id" value="{{vo.e_id}}" />
+</form>
+
+<table border="1">
+	<tr>
+		<td>사번</td>
+		<td>{{vo.e_id}}</td>
+	</tr>
+	<tr>
+		<td>이름</td>
+		<td>{{vo.e_name}}</td>
+	</tr>
+	<tr>
+		<td>성별</td>
+		<td>{{vo.gen}}</td>
+	</tr>
+	<tr>
+		<td>주소</td>
+		<td>{{vo.addr}}</td>
+	</tr>
+	<tr>
+		<td colspan="2">
+			<input type="button" value="수정" onclick="fn_mod()">
+			<input type="button" value="삭제" onclick="fn_del_act()">
+		</td>
+	</tr>
+</table>
+
+</body>
+</html>
