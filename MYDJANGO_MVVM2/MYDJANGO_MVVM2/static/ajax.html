@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="jquery-3.7.1.js"></script>
+<script type="text/javascript">
+function fn_ajax() {
+	var param = {
+		'menu' : '짬뽕'
+	}
+
+	$.ajax({
+		type : 'POST',
+		url : '/ajax',
+		data: JSON.stringify(param),
+		success : function(res){
+			console.log(res);
+		}
+	});
+}
+</script>
+</head>
+<body>
+AJAX HTML <br>
+(ajax로 CRUD 구현) <br>
+
+<a href="javascript:fn_ajax()">ajax</a>
+
+</body>
+</html>

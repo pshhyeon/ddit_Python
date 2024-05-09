@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="jquery-3.7.1.js"></script>
+<script type="text/javascript">
+
+
+
+function fn_fetch(){
+   
+   var param = {
+         'menu' : '탕수육'         
+      }
+   
+   fetch_option = {
+      method : 'POST',
+      body : JSON.stringify(param)
+   }
+   
+   //fetch
+   fetch('/fetch',fetch_option)
+   .then(res => res.json())
+   .then(res =>{
+      console.log(res);
+      $('#menu').html(res.menu);
+   })
+//    .catch(function(err){
+//       console.log("에러")
+//    })
+//    .finally(function(){
+//       console.log("마지막")
+//    })
+   
+   
+}
+
+</script>
+</head>
+<body>
+FETCH HTML<br><br>
+
+<a href="javascript:fn_fetch()">fetch</a><br>
+
+<div id="menu"></div>
+
+</body>
+</html>
