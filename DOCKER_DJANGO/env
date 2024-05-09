@@ -1,0 +1,5 @@
+# docker image 생성
+docker build -t djangotest .
+
+# docker container에 올리기
+docker run -d -p 0.0.0.0:8000:8000/tcp --name django_con djangotest:latest
