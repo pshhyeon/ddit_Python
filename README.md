@@ -8,3 +8,10 @@
 8. UI구현
 9. 웹 크롤링 (셀레니움)
 10. 프레임워크(DJango)활용
+11. MVC pattern
+12. MVVM pattern
+13. AJAX & fetch
+14. Flask
+15. Ubuntu Linux
+16. DOCKER
+17. AMAZON
